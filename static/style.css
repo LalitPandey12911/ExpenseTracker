@@ -1,0 +1,193 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Heading styles */
+h1, h2 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Form container styling */
+form {
+    width: 100%;  /* Set the form to take up full width of the container */
+    max-width: 1200px;  /* You can increase this max-width as needed */
+    margin: 0 auto;  /* Center the form horizontally */
+    padding: 20px;
+    border: 3px solid black;  /* Increased border width */
+    border-radius: 8px;
+    background-color: #f9f9f9;  /* Light background for the form */
+}
+
+/* Form input and label styling */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;  /* Increased space between inputs */
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+/* Styling for textarea */
+textarea {
+    height: 100px;  /* Set the height for the description textarea */
+}
+
+/* Submit button styling */
+button {
+    width: 100%;  /* Make the button the same width as inputs */
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #218838;
+}
+
+/* Table container */
+.container {
+    width: 100%;  /* Set container to take full width */
+    max-width: 1400px;  /* You can increase this value to allow more space for the form */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;  /* Center the content */
+    margin-top: 20px;
+}
+
+/* Table styling */
+table {
+    border-collapse: collapse;
+    width: 100%;  /* Table takes full width of its container */
+    text-align: center;
+    border: 3px solid black;  /* Increased the border width to 3px */
+}
+
+table th, table td {
+    padding: 10px;
+    border: 3px solid black;  /* Increased the border width to 3px */
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Target the Date column */
+table th:nth-child(1),  
+table td:nth-child(1) {
+    min-width: 150px;  /* Prevents the column from being too narrow */
+    white-space: nowrap;  /* Prevent text from wrapping */
+}
+
+/* Action buttons below the table */
+.action-buttons {
+    margin-top: 20px; /* Space between table and buttons */
+}
+
+.action-buttons button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+}
+
+/* Button hover effect */
+.action-buttons button:hover {
+    background-color: #0056b3;
+}
+
+/* Links styling */
+a {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}
+
+a.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+a.btn-primary:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Flash message styling */
+.flash-messages {
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    text-align: center;  /* Center the flash messages */
+}
+
+.flash {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.flash-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.flash-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.flash-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* Make the table responsive on small screens */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+    table th, table td {
+        padding: 8px;
+    }
+}
