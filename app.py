@@ -32,17 +32,31 @@ def home():
 # User Registration
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    if request.method == 'POST':                         #If the request is a POST, it means the user submitted the registration form.The server now processes the submitted data.(here accessing mean data is processed by the server further store it on the database)
-        username = request.form['username']
+    if request.method == 'POST':
         email = request.form['email']
-        password = generate_password_hash(request.form['password'])
+        password = request.form['password']
 
-        query = "INSERT INTO users (username, email, hashed_password) VALUES (%s, %s, %s)"   #%s placeholders are used to safely insert user-provided values, preventing SQL Injection attacks.
-        cursor.execute(query, (username, email, password))
-        db.commit()                                      #Finalizes the insertion into the database by committing the transaction.
-        flash("Registration successful! Please login.", "success")
+        cursor = db.cursor(dictionary=True)  # FIX: Correct way to get a cursor
+        
+        # Check if user already exists
+        cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
+        existing_user = cursor.fetchone()
+        
+        if existing_user:
+            flash("User already exists! Please log in.", "warning")
+            return redirect(url_for('register'))
+        
+        hashed_password = generate_password_hash(password)
+        cursor.execute("INSERT INTO users (email, password) VALUES (%s, %s)", (email, hashed_password))
+        db.commit()
+        cursor.close()  # Close the cursor after use
+
+        flash("Registration successful! Please log in.", "success")
         return redirect(url_for('login'))
-    return render_template('register.html')              #The user sees the registration form (an HTML page) in their browser.
+
+    return render_template('register.html')
+
+
 
 # User Login
 @app.route('/login', methods=['GET', 'POST'])
