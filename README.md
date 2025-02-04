@@ -35,7 +35,7 @@ Flask framework and its associated dependencies
 Deployment Instructions
 Clone the repository to your local machine:
 
-git clone https://github.com/yourusername/expense-tracker.git
+git clone https://github.com/LalitPandey12911/expense-tracker.git
 cd expense-tracker
 Establish a virtual environment to encapsulate dependencies:
 
