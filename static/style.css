@@ -6,6 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #f4f4f9; /* Light grey background */
 }
 
 /* Heading styles */
@@ -14,15 +15,37 @@ h1, h2 {
     margin: 10px 0;
 }
 
+/* Centering login, registration, and welcome content */
+.login-container, .register-container, .welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+}
+
+.login-form, .register-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border: 3px solid black;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* Form container styling */
 form {
-    width: 100%;  /* Set the form to take up full width of the container */
-    max-width: 1200px;  /* You can increase this max-width as needed */
-    margin: 0 auto;  /* Center the form horizontally */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    border: 3px solid black;  /* Increased border width */
+    border: 3px solid black;
     border-radius: 8px;
-    background-color: #f9f9f9;  /* Light background for the form */
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Form input and label styling */
@@ -35,19 +58,19 @@ label {
 input, textarea {
     width: 100%;
     padding: 8px;
-    margin-bottom: 15px;  /* Increased space between inputs */
+    margin-bottom: 15px;
     border-radius: 4px;
     border: 1px solid #ddd;
 }
 
 /* Styling for textarea */
 textarea {
-    height: 100px;  /* Set the height for the description textarea */
+    height: 100px;
 }
 
 /* Submit button styling */
 button {
-    width: 100%;  /* Make the button the same width as inputs */
+    width: 100%;
     padding: 10px;
     background-color: #28a745;
     color: white;
@@ -64,25 +87,25 @@ button:hover {
 
 /* Table container */
 .container {
-    width: 100%;  /* Set container to take full width */
-    max-width: 1400px;  /* You can increase this value to allow more space for the form */
+    width: 100%;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;  /* Center the content */
+    text-align: center;
     margin-top: 20px;
 }
 
 /* Table styling */
 table {
     border-collapse: collapse;
-    width: 100%;  /* Table takes full width of its container */
+    width: 100%;
     text-align: center;
-    border: 3px solid black;  /* Increased the border width to 3px */
+    border: 3px solid black;
 }
 
 table th, table td {
     padding: 10px;
-    border: 3px solid black;  /* Increased the border width to 3px */
+    border: 3px solid black;
 }
 
 table tr:nth-child(even) {
@@ -99,15 +122,14 @@ table th {
 }
 
 /* Target the Date column */
-table th:nth-child(1),  
-table td:nth-child(1) {
-    min-width: 150px;  /* Prevents the column from being too narrow */
-    white-space: nowrap;  /* Prevent text from wrapping */
+table th:nth-child(1), table td:nth-child(1) {
+    min-width: 150px;
+    white-space: nowrap;
 }
 
 /* Action buttons below the table */
 .action-buttons {
-    margin-top: 20px; /* Space between table and buttons */
+    margin-top: 20px;
 }
 
 .action-buttons button {
@@ -135,18 +157,29 @@ a {
     font-weight: bold;
 }
 
-a.btn-primary {
-    background-color: #007bff;
-    color: white;
+a.btn-primary, a.btn-secondary {
     padding: 10px 15px;
     border-radius: 5px;
     text-align: center;
     display: inline-block;
+    color: white;
+    font-weight: bold;
+}
+
+a.btn-primary {
+    background-color: #007bff;
 }
 
 a.btn-primary:hover {
     background-color: #0056b3;
-    color: white;
+}
+
+a.btn-secondary {
+    background-color: #28a745;
+}
+
+a.btn-secondary:hover {
+    background-color: #218838;
 }
 
 /* Flash message styling */
@@ -154,7 +187,7 @@ a.btn-primary:hover {
     margin: 10px auto;
     padding: 10px;
     width: 80%;
-    text-align: center;  /* Center the flash messages */
+    text-align: center;
 }
 
 .flash {
@@ -191,3 +224,19 @@ a.btn-primary:hover {
         padding: 8px;
     }
 }
+
+.flash-warning {
+    background-color: #ffefd5;
+    color: #b35a00;
+    border: 1px solid #ffcc80;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
